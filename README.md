@@ -198,3 +198,11 @@ The suite uses an in-memory SQLite database (`phpunit.xml`). Tests cover authent
 ## License
 
 MIT — see [LICENSE](LICENSE). Laravel is MIT-licensed (Copyright (c) Taylor Otwell) and attribution to its upstream copyright is retained in the license file.
+## PostgreSQL acceptance branch
+
+The existing `pgsql` connection works with `DB_CONNECTION=pgsql`, `DB_HOST`,
+`DB_PORT`, `DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD` and optional `DB_URL`.
+Enable `pdo_pgsql` in PHP 8.4 CLI and FPM. After changing databases, clear cached
+configuration, then run `php artisan migrate --force` and
+`php artisan db:seed --force`. Restart configured queue workers. The readiness
+response identifies the actual database driver. No original main branch changes.

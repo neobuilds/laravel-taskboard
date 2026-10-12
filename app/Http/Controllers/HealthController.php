@@ -47,6 +47,7 @@ class HealthController extends Controller
         return response()->json([
             'status' => 'ready',
             'checks' => ['database' => 'up'],
+            'database_driver' => DB::connection()->getDriverName(),
         ]);
     }
 
